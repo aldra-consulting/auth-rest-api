@@ -1,0 +1,83 @@
+name: Deploy
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+      version:
+        required: true
+        type: string
+      region:
+        required: false
+        type: string
+        default: eu-west-1
+    secrets:
+      ALDRA_GITHUB_BOT_TOKEN:
+        required: true
+      AWS_ACCESS_KEY_ID:
+        required: true
+      AWS_SECRET_ACCESS_KEY:
+        required: true
+
+env:
+  HUSKY: 0
+
+jobs:
+  run:
+    name: Deploy to ${{ inputs.environment }}
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          registry-url: https://npm.pkg.github.com
+          node-version: 18
+          cache: npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.ALDRA_GITHUB_BOT_TOKEN }}
+
+      - name: Install dependencies
+        run: npm ci --quiet --ignore-scripts
+
+      - name: Build
+        run: npm run build
+
+      - name: Prune dependencies
+        run: npm prune --omit=dev
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ inputs.region }}
+
+      - name: Login to Amazon ECR
+        id: ecr-login
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          context: git
+          images: ${{ steps.ecr-login.outputs.registry }}/${{ vars.ECR_REPOSITORY }}
+          tags: |
+            type=semver,pattern={{version}},value=${{ inputs.version }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build, tag, and push image to Amazon ECR
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          provenance: false
