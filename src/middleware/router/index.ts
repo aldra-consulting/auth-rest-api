@@ -21,10 +21,6 @@ export default (provider: Provider) => {
     ctx.body = { status: 'UP' };
   });
 
-  router.get('/favicon.ico', (ctx) => {
-    ctx.respond = false;
-  });
-
   router.post('/interaction/:uid', body, async (ctx, next) => {
     const {
       prompt: { name: promptName },
