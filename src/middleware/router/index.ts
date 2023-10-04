@@ -16,6 +16,11 @@ const interactionRouteTags = [...routeTags, 'interaction'];
 export default (provider: Provider) => {
   const router = new Router();
 
+  router.get('/health', (ctx) => {
+    ctx.status = 200;
+    ctx.body = { status: 'UP' };
+  });
+
   router.get('/favicon.ico', (ctx) => {
     ctx.respond = false;
   });
