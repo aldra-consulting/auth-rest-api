@@ -1,3 +1,3 @@
-import bodyParser from 'koa-body';
+import { koaBody } from 'koa-body';
 
-export default bodyParser();
+export default koaBody();

@@ -1,3 +1,3 @@
-import { permittedCrossDomainPolicies } from 'koa-helmet';
+import helmet from 'koa-helmet';
 
-export default permittedCrossDomainPolicies();
+export default helmet.permittedCrossDomainPolicies();

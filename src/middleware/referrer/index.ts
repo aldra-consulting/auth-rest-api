@@ -1,3 +1,3 @@
-import { referrerPolicy } from 'koa-helmet';
+import helmet from 'koa-helmet';
 
-export default referrerPolicy({ policy: 'same-origin' });
+export default helmet.referrerPolicy({ policy: 'same-origin' });
