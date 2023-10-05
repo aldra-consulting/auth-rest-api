@@ -1,3 +1,16 @@
+# [1.2.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.1.0...1.2.0) (2023-10-05)
+
+
+### Bug Fixes
+
+* address issues with ESM module system ([02e6844](https://github.com/aldra-consulting/auth-rest-api/commit/02e68440ea92022770416b34def44899582d2c0d))
+* use secret ARN instead of name ([add615e](https://github.com/aldra-consulting/auth-rest-api/commit/add615e5ca6080c19b7d7a3c264925962263a230))
+
+
+### Features
+
+* migrate version 3 of AWS SDK ([7abeccc](https://github.com/aldra-consulting/auth-rest-api/commit/7abeccc031447795939522b0eace18f3aec3906b))
+
 # [1.1.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.0.0...1.1.0) (2023-10-04)
 
 
