@@ -20,7 +20,8 @@
     "npm": ">=9"
   },
   "scripts": {
-    "build": "run-s clean:lib typescript:compile typescript:transform:paths",
+    "build": "run-s clean typescript:compile typescript:transform:paths",
+    "clean": "run-p clean:lib clean:coverage",
     "clean:coverage": "rimraf coverage",
     "clean:lib": "rimraf lib",
     "commit": "cz",
