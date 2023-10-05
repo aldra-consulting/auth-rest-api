@@ -20,11 +20,12 @@
     "npm": ">=9"
   },
   "scripts": {
-    "build": "run-s clean typescript:compile typescript:transform:paths",
+    "build": "run-s clean compile",
     "clean": "run-p clean:lib clean:coverage",
     "clean:coverage": "rimraf coverage",
     "clean:lib": "rimraf lib",
     "commit": "cz",
+    "compile": "run-s typescript:compile typescript:transform:paths",
     "debug": "run-s serve:debug",
     "lint": "run-p lint:eslint",
     "lint:eslint": "eslint --ext tsx,ts,jsx,js,json .",
