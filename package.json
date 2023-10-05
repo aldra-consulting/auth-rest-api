@@ -42,10 +42,12 @@
     "typescript:compile": "tsc -p tsconfig.lib.json"
   },
   "dependencies": {
-    "@aws/dynamodb-auto-marshaller": "^0.7.1",
+    "@aws-sdk/client-cognito-identity-provider": "^3.425.0",
+    "@aws-sdk/client-dynamodb": "^3.425.0",
+    "@aws-sdk/client-secrets-manager": "^3.425.0",
+    "@aws-sdk/util-dynamodb": "^3.425.0",
     "@koa/cors": "^4.0.0",
     "@koa/router": "^12.0.0",
-    "aws-sdk": "^2.799.0",
     "jose": "^4.7.0",
     "koa-body": "^6.0.1",
     "koa-compress": "^5.1.0",

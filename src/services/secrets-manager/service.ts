@@ -1,4 +1,4 @@
-import SecretsManager from 'aws-sdk/clients/secretsmanager';
+import { SecretsManager } from '@aws-sdk/client-secrets-manager';
 
 import { type AwsRegion } from '@project/enums';
 import logger, { serviceTags } from '@project/utils/logging';
@@ -14,16 +14,12 @@ export default class SecretsManagerService {
 
   getSecret = async (id: string): Promise<string> => {
     try {
-      const { SecretString, SecretBinary } = await this.#client
-        .getSecretValue({ SecretId: id })
-        .promise();
+      const { SecretString } = await this.#client.getSecretValue({
+        SecretId: id,
+      });
 
       if (SecretString) {
         return SecretString;
-      }
-
-      if (SecretBinary) {
-        return Buffer.from(SecretBinary as string, 'base64').toString('ascii');
       }
     } catch (error) {
       throw this.#handleError(error);

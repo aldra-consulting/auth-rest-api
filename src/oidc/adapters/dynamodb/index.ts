@@ -1,8 +1,8 @@
-import { Marshaller } from '@aws/dynamodb-auto-marshaller';
-import { DynamoDB } from 'aws-sdk';
+import { DynamoDB } from '@aws-sdk/client-dynamodb';
+import { marshall, unmarshall } from '@aws-sdk/util-dynamodb';
 
 import env from '@project/env';
-import { isProductionEnvironment, isString } from '@project/utils/common';
+import { isString } from '@project/utils/common';
 
 const { AWS_REGION: region, OIDC_PROVIDER_DB_TABLE: TableName } = env;
 
@@ -11,19 +11,9 @@ export default class DynamoDBAdapter {
 
   #client: DynamoDB;
 
-  #marshaller: Marshaller;
-
-  constructor(name: string, client?: DynamoDB, marshaller?: Marshaller) {
+  constructor(name: string, client?: DynamoDB) {
     this.#name = name;
-    this.#client =
-      client ??
-      new DynamoDB({
-        region,
-        sslEnabled: isProductionEnvironment(),
-        convertResponseTypes: false,
-        paramValidation: false,
-      });
-    this.#marshaller = marshaller ?? new Marshaller({ unwrapNumbers: true });
+    this.#client = client ?? new DynamoDB({ region });
   }
 
   upsert = async (
@@ -89,21 +79,14 @@ export default class DynamoDBAdapter {
   };
 
   consume = async (id: string): Promise<void> => {
-    const marshalledId = this.#marshaller.marshallValue(this.#key(id));
-    const marshalledConsumedAt = this.#marshaller.marshallValue(
-      Math.floor(Date.now() / 1000)
-    );
-
-    if (marshalledId && marshalledConsumedAt) {
-      await this.#client
-        .updateItem({
-          TableName,
-          Key: { id: marshalledId },
-          UpdateExpression: 'set consumedAt = :consumedAt',
-          ExpressionAttributeValues: { ':consumedAt': marshalledConsumedAt },
-        })
-        .promise();
-    }
+    await this.#client.updateItem({
+      TableName,
+      Key: marshall({ id: this.#key(id) }),
+      UpdateExpression: 'set consumedAt = :consumedAt',
+      ExpressionAttributeValues: marshall({
+        ':consumedAt': Math.floor(Date.now() / 1000),
+      }),
+    });
   };
 
   public async destroy(id: string): Promise<void> {
@@ -126,52 +109,34 @@ export default class DynamoDBAdapter {
   #get = async <Payload, T extends object = { payload: Payload }>(
     key: string
   ): Promise<T | undefined> => {
-    const marshalledKey = this.#marshaller.marshallValue(key);
+    const { Item: item } = await this.#client.getItem({
+      TableName,
+      Key: marshall({
+        id: key,
+      }),
+    });
 
-    if (marshalledKey) {
-      const { Item: item } = await this.#client
-        .getItem({
-          TableName,
-          Key: {
-            id: marshalledKey,
-          },
-        })
-        .promise();
-
-      if (item) {
-        return this.#marshaller.unmarshallItem(item) as T;
-      }
-    }
-
-    return undefined;
+    return item ? (unmarshall(item) as T) : undefined;
   };
 
   #set = async <T>(key: string, value: T, ttl?: number): Promise<void> => {
-    await this.#client
-      .putItem({
-        TableName,
-        Item: this.#marshaller.marshallItem({
-          id: key,
-          ...value,
-          expiresAt: ttl ? Math.floor(Date.now() / 1000) + ttl : undefined,
-        }),
-      })
-      .promise();
+    await this.#client.putItem({
+      TableName,
+      Item: marshall({
+        id: key,
+        ...value,
+        expiresAt: ttl ? Math.floor(Date.now() / 1000) + ttl : undefined,
+      }),
+    });
   };
 
   #remove = async (key: string): Promise<void> => {
-    const marshalledKey = this.#marshaller.marshallValue(key);
-
-    if (marshalledKey) {
-      await this.#client
-        .deleteItem({
-          TableName,
-          Key: {
-            id: marshalledKey,
-          },
-        })
-        .promise();
-    }
+    await this.#client.deleteItem({
+      TableName,
+      Key: marshall({
+        id: key,
+      }),
+    });
   };
 
   #key = (id: string): string => `${this.#name}:${id}`;

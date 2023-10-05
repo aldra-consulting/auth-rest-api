@@ -1,4 +1,8 @@
-import CognitoIdentityServiceProvider from 'aws-sdk/clients/cognitoidentityserviceprovider';
+import {
+  CognitoIdentityProvider,
+  type UserType,
+  type AttributeType,
+} from '@aws-sdk/client-cognito-identity-provider';
 import { decodeJwt } from 'jose';
 
 import { type AwsRegion } from '@project/enums';
@@ -9,7 +13,7 @@ import { type CognitoUser, type SignInResponse } from './types';
 const tags = [...serviceTags, 'cognito'];
 
 export default class CognitoService {
-  #client: CognitoIdentityServiceProvider;
+  #client: CognitoIdentityProvider;
 
   #userPoolId: string;
 
@@ -19,9 +23,9 @@ export default class CognitoService {
     region: AwsRegion,
     userPoolId: string,
     clientId: string,
-    client?: CognitoIdentityServiceProvider
+    client?: CognitoIdentityProvider
   ) {
-    this.#client = client ?? new CognitoIdentityServiceProvider({ region });
+    this.#client = client ?? new CognitoIdentityProvider({ region });
     this.#userPoolId = userPoolId;
     this.#clientId = clientId;
   }
@@ -31,13 +35,11 @@ export default class CognitoService {
     type?: 'email'
   ): Promise<Partial<CognitoUser> | null> => {
     try {
-      const { Users: [user] = [] } = await this.#client
-        .listUsers({
-          UserPoolId: this.#userPoolId,
-          Filter: `${type ?? 'username'} = '${username}'`,
-          Limit: 1,
-        })
-        .promise();
+      const { Users: [user] = [] } = await this.#client.listUsers({
+        UserPoolId: this.#userPoolId,
+        Filter: `${type ?? 'username'} = '${username}'`,
+        Limit: 1,
+      });
 
       if (user) {
         logger.info(`User found for username: ${username}`, {
@@ -62,17 +64,15 @@ export default class CognitoService {
     password: string
   ): Promise<SignInResponse> => {
     try {
-      const { AuthenticationResult } = await this.#client
-        .adminInitiateAuth({
-          AuthFlow: 'ADMIN_NO_SRP_AUTH',
-          UserPoolId: this.#userPoolId,
-          ClientId: this.#clientId,
-          AuthParameters: {
-            USERNAME: username,
-            PASSWORD: password,
-          },
-        })
-        .promise();
+      const { AuthenticationResult } = await this.#client.adminInitiateAuth({
+        AuthFlow: 'ADMIN_NO_SRP_AUTH',
+        UserPoolId: this.#userPoolId,
+        ClientId: this.#clientId,
+        AuthParameters: {
+          USERNAME: username,
+          PASSWORD: password,
+        },
+      });
 
       if (AuthenticationResult?.IdToken) {
         const { sub, email_verified: emailVerified = false } = decodeJwt(
@@ -93,15 +93,13 @@ export default class CognitoService {
 
   sendConfirmationCode = async (username: string): Promise<void> => {
     try {
-      await this.#client
-        .resendConfirmationCode({
-          ClientId: this.#clientId,
-          Username: username,
-          UserContextData: {
-            EncodedData: '',
-          },
-        })
-        .promise();
+      await this.#client.resendConfirmationCode({
+        ClientId: this.#clientId,
+        Username: username,
+        UserContextData: {
+          EncodedData: '',
+        },
+      });
 
       logger.info('Successfully sent confirmation code to user', {
         tags: [...tags, 'success'],
@@ -117,16 +115,14 @@ export default class CognitoService {
 
   verifyUser = async (username: string, code: string): Promise<void> => {
     try {
-      await this.#client
-        .confirmSignUp({
-          ClientId: this.#clientId,
-          Username: username,
-          ConfirmationCode: code,
-          UserContextData: {
-            EncodedData: '',
-          },
-        })
-        .promise();
+      await this.#client.confirmSignUp({
+        ClientId: this.#clientId,
+        Username: username,
+        ConfirmationCode: code,
+        UserContextData: {
+          EncodedData: '',
+        },
+      });
 
       logger.info('Successfully confirmed user registration', {
         tags: [...tags, 'success'],
@@ -140,9 +136,7 @@ export default class CognitoService {
     }
   };
 
-  private toUser(
-    user: CognitoIdentityServiceProvider.UserType
-  ): Partial<CognitoUser> {
+  private toUser(user: UserType): Partial<CognitoUser> {
     const {
       Attributes: userAttributes = [],
       Enabled: enabled,
@@ -158,12 +152,17 @@ export default class CognitoService {
   }
 
   #unmarshallUserAttributes = (
-    attributes: CognitoIdentityServiceProvider.AttributeListType
+    attributes: AttributeType[]
   ): Record<string, string> =>
     attributes.reduce(
       (previous, { Name: name, Value: value }) => ({
         ...previous,
-        [name.startsWith('custom') ? name.replace('custom:', '') : name]: value,
+        ...(name
+          ? {
+              [name.startsWith('custom') ? name.replace('custom:', '') : name]:
+                value,
+            }
+          : undefined),
       }),
       {}
     );
