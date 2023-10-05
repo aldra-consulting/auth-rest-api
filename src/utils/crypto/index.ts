@@ -11,7 +11,7 @@ import {
   isString,
 } from '@project/utils/common';
 
-const { AWS_REGION: region, NODE_ENV: environment, REALM: realm } = env;
+const { AWS_SECRET_ARN_OIDC_COOKIE_KEYS, AWS_SECRET_ARN_OIDC_JWKS } = env;
 
 async function generateRuntimeJWKS(): Promise<JWKS> {
   const { privateKey } = await generateKeyPair('RS512');
@@ -43,9 +43,7 @@ export async function getCookieKeys(): Promise<string[]> {
   }
 
   const value = JSON.parse(
-    await secretsManager.getSecret(
-      `${realm}-${region}-${environment}-oidc-cookie-keys`
-    )
+    await secretsManager.getSecret(AWS_SECRET_ARN_OIDC_COOKIE_KEYS)
   ) as unknown;
 
   assertCookieKeys(value);
@@ -59,9 +57,7 @@ export async function getJwks(): Promise<JWKS> {
   }
 
   const value = JSON.parse(
-    await secretsManager.getSecret(
-      `${realm}-${region}-${environment}-oidc-jwks`
-    )
+    await secretsManager.getSecret(AWS_SECRET_ARN_OIDC_JWKS)
   ) as unknown;
 
   assertJWKS(value);

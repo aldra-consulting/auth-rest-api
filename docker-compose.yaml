@@ -16,6 +16,8 @@ services:
       - AWS_REGION=eu-west-1
       - AWS_COGNITO_USER_POOL_ID
       - AWS_COGNITO_USER_POOL_CLIENT_ID
+      - AWS_SECRET_ARN_OIDC_COOKIE_KEYS
+      - AWS_SECRET_ARN_OIDC_JWKS
       - OIDC_PROVIDER_DB_TABLE=aldra-consulting-eu-west-1-development-oidc-provider
       - USE_DEV_INTERACTIONS=false
       - AUTH_INTERACTIONS_URL=http://0.0.0.0:8002
