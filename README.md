@@ -39,9 +39,9 @@ Auth REST API is an OpenID Connect authorization server.
 - `HOST` - application hostname (not necessary)
   - `0.0.0.0` (default)
 - `PORT` - application port (not necessary)
-  - `8004` (default)
+  - `8001` (default)
 - `ISSUER` - OIDC issuer
-  - `http://0.0.0.0:8004` (default in development mode)
+  - `http://0.0.0.0:8001` (default in development mode)
   - `https://id.{env}.aldra.no` (must be used in production-like environments)
   - `https://id.aldra.no` (must be used in production)
 - `REALM` - realm name
