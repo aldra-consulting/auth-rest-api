@@ -68,7 +68,7 @@ jobs:
       fail-fast: true
       matrix:
         environment: [production]
-    uses: ./.github/workflows/deploy-to-aws-ecr.yaml
+    uses: ./.github/workflows/deploy.yaml
     secrets: inherit
     with:
       environment: ${{ matrix.environment }}
