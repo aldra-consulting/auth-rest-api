@@ -39,7 +39,7 @@ jobs:
 
       - name: Import GPG key for Aldra GitHub Bot
         id: gpg
-        uses: crazy-max/ghaction-import-gpg@v5
+        uses: crazy-max/ghaction-import-gpg@v6
         with:
           gpg_private_key: ${{ secrets.ALDRA_GITHUB_BOT_GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.ALDRA_GITHUB_BOT_GPG_PASSPHRASE }}
