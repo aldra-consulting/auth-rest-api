@@ -24,7 +24,7 @@ Auth REST API is an OpenID Connect authorization server.
 - Build a Docker container using the following command:
   - `docker build -t aldra/auth-rest-api .`
 - Run the container using the following comand:
-  - `docker run -d -p 8001:8000 -e NODE_ENV -e HOST -e PORT -e ISSUER -e REALM -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_REGION -e AWS_COGNITO_USER_POOL_ID -e AWS_COGNITO_USER_POOL_CLIENT_ID -e AWS_SECRET_ARN_OIDC_COOKIE_KEYS -e AWS_SECRET_ARN_OIDC_JWKS -e OIDC_PROVIDER_DB_TABLE -e USE_DEV_INTERACTIONS -e AUTH_INTERACTIONS_URL aldra/auth-rest-api`
+  - `docker run -d -p 8001:8000 -e NODE_ENV -e HOST -e PORT -e ISSUER -e REALM -e AWS_REGION -e AWS_COGNITO_USER_POOL_ID -e AWS_COGNITO_USER_POOL_CLIENT_ID -e AWS_SECRET_ARN_OIDC_COOKIE_KEYS -e AWS_SECRET_ARN_OIDC_JWKS -e OIDC_PROVIDER_DB_TABLE -e USE_DEV_INTERACTIONS -e AUTH_INTERACTIONS_URL aldra/auth-rest-api`
 
 #### Running application using Docker Compose
 
@@ -46,8 +46,6 @@ Auth REST API is an OpenID Connect authorization server.
   - `https://id.aldra.no` (must be used in production)
 - `REALM` - realm name
   - `aldra` (default)
-- `AWS_ACCESS_KEY_ID` - AWS access key ID
-- `AWS_SECRET_ACCESS_KEY` - AWS secret access key
 - `AWS_REGION` - AWS region
   - `eu-west-1` (default)
 - `AWS_COGNITO_USER_POOL_ID` - AWS Cognito user pool ID
