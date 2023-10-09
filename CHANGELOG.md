@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.2.0...1.3.0) (2023-10-09)
+
+
+### Bug Fixes
+
+* remove hardcoded value ([80d15e3](https://github.com/aldra-consulting/auth-rest-api/commit/80d15e3a2256aca59c494105a04980bf1bd6fb7f))
+
+
+### Features
+
+* remove AWS credentials from environment variables ([a0b90b4](https://github.com/aldra-consulting/auth-rest-api/commit/a0b90b41617ef759394f93c788bda95bdca22e93))
+
 # [1.2.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.1.0...1.2.0) (2023-10-05)
 
 
