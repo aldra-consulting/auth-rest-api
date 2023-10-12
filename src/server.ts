@@ -21,6 +21,8 @@ export default async () =>
   (async () => {
     const provider = new Provider(issuer, await configuration());
 
+    provider.proxy = env.NODE_ENV === 'production';
+
     provider.use(compression);
     provider.use(cors);
     provider.use(crossdomain);
