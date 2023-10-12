@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.4.0...1.5.0) (2023-10-12)
+
+
+### Features
+
+* set proxy flag based on environment ([699b4f4](https://github.com/aldra-consulting/auth-rest-api/commit/699b4f48c546adfe0769f8ed5b799d632499ec04))
+
 # [1.4.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.3.0...1.4.0) (2023-10-12)
 
 
