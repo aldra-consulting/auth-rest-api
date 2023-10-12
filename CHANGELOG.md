@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.3.0...1.4.0) (2023-10-12)
+
+
+### Features
+
+* add pre and post middleware loggers ([7ed4fa0](https://github.com/aldra-consulting/auth-rest-api/commit/7ed4fa06bb6cdfbf185214d9d8d6505e1b088204))
+
 # [1.3.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.2.0...1.3.0) (2023-10-09)
 
 
