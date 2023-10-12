@@ -11,6 +11,7 @@ import {
   helmet,
   referrer,
   router,
+  sslify,
 } from './middleware';
 import configuration from './oidc';
 import { serverConfiguration, queueListener } from './plugins';
@@ -21,7 +22,11 @@ export default async () =>
   (async () => {
     const provider = new Provider(issuer, await configuration());
 
-    provider.proxy = env.NODE_ENV === 'production';
+    if (env.NODE_ENV === 'production') {
+      provider.proxy = true;
+
+      provider.use(sslify);
+    }
 
     provider.use(compression);
     provider.use(cors);

@@ -5,3 +5,4 @@ export { default as crossdomain } from './crossdomain';
 export { default as helmet } from './helmet';
 export { default as referrer } from './referrer';
 export { default as router } from './router';
+export { default as sslify } from './sslify';
