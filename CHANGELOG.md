@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.5.0...1.6.0) (2023-10-12)
+
+
+### Features
+
+* add sslify middleware ([2883900](https://github.com/aldra-consulting/auth-rest-api/commit/2883900859624449b7e27788a80bab42fe2e4faa))
+
 # [1.5.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.4.0...1.5.0) (2023-10-12)
 
 
