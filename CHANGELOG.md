@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/aldra-consulting/auth-rest-api/compare/1.6.0...1.6.1) (2023-10-12)
+
+
+### Bug Fixes
+
+* remove sslify middleware ([c7c151b](https://github.com/aldra-consulting/auth-rest-api/commit/c7c151ba6e6cb7da17cfc7ccb5f32a54ad9e9684))
+
 # [1.6.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.5.0...1.6.0) (2023-10-12)
 
 
