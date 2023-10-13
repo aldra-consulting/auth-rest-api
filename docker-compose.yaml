@@ -25,6 +25,16 @@ services:
       aldra:
         aliases:
           - auth-rest-api
+  sidecar:
+    build:
+      context: .
+      dockerfile: ./docker/sidecar.Dockerfile
+    ports:
+      - 8002:80
+    networks:
+      aldra:
+        aliases:
+          - auth-rest-api-sidecar
 networks:
   aldra:
     name: aldra

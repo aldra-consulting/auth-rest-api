@@ -74,6 +74,15 @@ jobs:
           tags: |
             type=semver,pattern={{version}},value=${{ inputs.version }}
 
+      - name: Docker meta for sidecar
+        id: sidecar-meta
+        uses: docker/metadata-action@v5
+        with:
+          context: git
+          images: ${{ steps.ecr-login.outputs.registry }}/${{ vars.ECR_REPOSITORY_SIDECAR }}
+          tags: |
+            type=semver,pattern={{version}},value=${{ inputs.version }}
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -84,6 +93,17 @@ jobs:
           file: ./docker/app.Dockerfile
           push: true
           tags: ${{ steps.app-meta.outputs.tags }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          provenance: false
+
+      - name: Build, tag, and push sidecar image to Amazon ECR
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./docker/sidecar.Dockerfile
+          push: true
+          tags: ${{ steps.sidecar-meta.outputs.tags }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           provenance: false
