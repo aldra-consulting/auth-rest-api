@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.1...1.7.2) (2023-10-13)
+
+
+### Bug Fixes
+
+* update Ngninx configuration ([3ddc3ce](https://github.com/aldra-consulting/auth-rest-api/commit/3ddc3ce1e6371d1dc6b372780ebc789d24aa9793))
+
 ## [1.7.1](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.0...1.7.1) (2023-10-13)
 
 
