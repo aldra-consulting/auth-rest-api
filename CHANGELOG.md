@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.0...1.7.1) (2023-10-13)
+
+
+### Bug Fixes
+
+* forward sidecar traffic to localhost ([474927c](https://github.com/aldra-consulting/auth-rest-api/commit/474927cf04ac33d862c1f180babf97d0617e0579))
+
 # [1.7.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.6.1...1.7.0) (2023-10-13)
 
 
