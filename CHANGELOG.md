@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.2...1.7.3) (2023-10-13)
+
+
+### Bug Fixes
+
+* remove unnecessary daemon directive ([350dd4f](https://github.com/aldra-consulting/auth-rest-api/commit/350dd4f20231da4539a1fe6a76674defb613e0d3))
+
 ## [1.7.2](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.1...1.7.2) (2023-10-13)
 
 
