@@ -22,9 +22,9 @@ Auth REST API is an OpenID Connect authorization server.
 #### Running application in a Docker container
 
 - Build a Docker container using the following command:
-  - `docker build -t aldra/auth-rest-api .`
+  - `docker build -f docker/app.Dockerfile -t aldra/auth-rest-api-app .`
 - Run the container using the following comand:
-  - `docker run -d -p 8001:8000 -e NODE_ENV -e HOST -e PORT -e ISSUER -e REALM -e AWS_REGION -e AWS_COGNITO_USER_POOL_ID -e AWS_COGNITO_USER_POOL_CLIENT_ID -e AWS_SECRET_ARN_OIDC_COOKIE_KEYS -e AWS_SECRET_ARN_OIDC_JWKS -e OIDC_PROVIDER_DB_TABLE -e USE_DEV_INTERACTIONS -e AUTH_INTERACTIONS_URL aldra/auth-rest-api`
+  - `docker run -d -p 8001:8000 -e NODE_ENV -e HOST -e PORT -e ISSUER -e REALM -e AWS_REGION -e AWS_COGNITO_USER_POOL_ID -e AWS_COGNITO_USER_POOL_CLIENT_ID -e AWS_SECRET_ARN_OIDC_COOKIE_KEYS -e AWS_SECRET_ARN_OIDC_JWKS -e OIDC_PROVIDER_DB_TABLE -e USE_DEV_INTERACTIONS -e AUTH_INTERACTIONS_URL aldra/auth-rest-api-app`
 
 #### Running application using Docker Compose
 
