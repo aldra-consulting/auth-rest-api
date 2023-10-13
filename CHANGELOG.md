@@ -1,3 +1,15 @@
+# [1.7.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.6.1...1.7.0) (2023-10-13)
+
+
+### Bug Fixes
+
+* change name of application image ([3c05ead](https://github.com/aldra-consulting/auth-rest-api/commit/3c05ead64e4db711933c9d5ef5a980bbe9ab4d72))
+
+
+### Features
+
+* add Nginx sidecar ([3b8cb2a](https://github.com/aldra-consulting/auth-rest-api/commit/3b8cb2a489e1bf997b7590b10694d7d55ba4fffb))
+
 ## [1.6.1](https://github.com/aldra-consulting/auth-rest-api/compare/1.6.0...1.6.1) (2023-10-12)
 
 
