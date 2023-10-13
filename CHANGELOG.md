@@ -1,3 +1,10 @@
+## [1.7.4](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.3...1.7.4) (2023-10-13)
+
+
+### Bug Fixes
+
+* change port exposed by sidecar container ([88cf522](https://github.com/aldra-consulting/auth-rest-api/commit/88cf52221951b346e69fe05773eff90b0813da81))
+
 ## [1.7.3](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.2...1.7.3) (2023-10-13)
 
 
