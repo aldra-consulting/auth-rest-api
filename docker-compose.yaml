@@ -30,7 +30,7 @@ services:
       context: .
       dockerfile: ./docker/sidecar.Dockerfile
     ports:
-      - 8002:80
+      - 8002:8001
     networks:
       aldra:
         aliases:
