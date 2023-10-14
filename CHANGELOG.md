@@ -1,3 +1,10 @@
+## [1.7.6](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.5...1.7.6) (2023-10-14)
+
+
+### Bug Fixes
+
+* change proxy address ([5632060](https://github.com/aldra-consulting/auth-rest-api/commit/5632060f0c24cb945d13ec1427ad782f5be446a8))
+
 ## [1.7.5](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.4...1.7.5) (2023-10-14)
 
 
