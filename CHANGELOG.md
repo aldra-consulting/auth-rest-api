@@ -1,3 +1,10 @@
+## [1.7.7](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.6...1.7.7) (2023-10-14)
+
+
+### Bug Fixes
+
+* hardcode X-Forwarded-Proto header value ([c30c059](https://github.com/aldra-consulting/auth-rest-api/commit/c30c0593041d27bbec0ba9e675703699a3e2ef0a))
+
 ## [1.7.6](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.5...1.7.6) (2023-10-14)
 
 
