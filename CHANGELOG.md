@@ -1,3 +1,10 @@
+## [1.7.5](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.4...1.7.5) (2023-10-14)
+
+
+### Bug Fixes
+
+* address sidecar permission issues ([4a0777f](https://github.com/aldra-consulting/auth-rest-api/commit/4a0777f464d469da822be5437345899ffd87c4a6))
+
 ## [1.7.4](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.3...1.7.4) (2023-10-13)
 
 
