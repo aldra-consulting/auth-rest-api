@@ -1,3 +1,10 @@
+## [1.7.8](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.7...1.7.8) (2023-10-15)
+
+
+### Bug Fixes
+
+* simplify sidecar configuration ([66e6f9c](https://github.com/aldra-consulting/auth-rest-api/commit/66e6f9c1f24369b466bbe5abb0639a0506cce619))
+
 ## [1.7.7](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.6...1.7.7) (2023-10-14)
 
 
