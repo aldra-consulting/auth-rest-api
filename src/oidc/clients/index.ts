@@ -36,14 +36,10 @@ export default () =>
       application_type: 'web',
       grant_types: ['authorization_code', 'refresh_token'],
       scope: `openid profile`,
-      redirect_uris: [
-        'https://aldra.no/auth',
-        'https://id.aldra.no/interactions',
-        'https://id.aldra.no/interactions/auth',
-      ],
+      redirect_uris: ['https://www.aldra.no/auth'],
       post_logout_redirect_uris: [
-        'https://aldra.no',
-        'https://id.aldra.no/interactions',
+        'https://www.aldra.no',
+        'https://www.id.aldra.no/interactions',
       ],
       token_endpoint_auth_method: 'none',
       isDevelopment: false,
