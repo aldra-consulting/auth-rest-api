@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/aldra-consulting/auth-rest-api/compare/1.8.0...1.8.1) (2023-10-20)
+
+
+### Bug Fixes
+
+* change client redirect URIs ([ee82a0e](https://github.com/aldra-consulting/auth-rest-api/commit/ee82a0ec1012e92d6ccfd5079220da0c3e04af2a))
+
 # [1.8.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.9...1.8.0) (2023-10-20)
 
 
