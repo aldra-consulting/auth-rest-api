@@ -38,6 +38,7 @@ export default () =>
       scope: `openid profile`,
       redirect_uris: [
         'https://aldra.no/auth',
+        'https://id.aldra.no/interactions',
         'https://id.aldra.no/interactions/auth',
       ],
       post_logout_redirect_uris: [
