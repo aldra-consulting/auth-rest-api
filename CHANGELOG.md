@@ -1,3 +1,10 @@
+## [1.7.9](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.8...1.7.9) (2023-10-20)
+
+
+### Bug Fixes
+
+* add redirect URI to production client ([f18e077](https://github.com/aldra-consulting/auth-rest-api/commit/f18e0775babf22bf16f73b8fe53deea30ac3237e))
+
 ## [1.7.8](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.7...1.7.8) (2023-10-15)
 
 
