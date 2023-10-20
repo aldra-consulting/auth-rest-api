@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.9...1.8.0) (2023-10-20)
+
+
+### Features
+
+* add index routes ([1a36dce](https://github.com/aldra-consulting/auth-rest-api/commit/1a36dceca7f567e0fcdf93397355cb424ea8bace))
+
 ## [1.7.9](https://github.com/aldra-consulting/auth-rest-api/compare/1.7.8...1.7.9) (2023-10-20)
 
 
