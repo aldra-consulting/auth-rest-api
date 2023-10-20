@@ -21,6 +21,14 @@ export default (provider: Provider) => {
     ctx.body = { status: 'UP' };
   });
 
+  router.get('/', (ctx) => {
+    ctx.redirect(host);
+  });
+
+  router.get('/index.html', (ctx) => {
+    ctx.redirect(host);
+  });
+
   router.post('/interaction/:uid', body, async (ctx, next) => {
     const {
       prompt: { name: promptName },
