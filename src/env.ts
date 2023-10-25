@@ -16,7 +16,7 @@ const {
   AWS_SECRET_ARN_OIDC_JWKS = '',
   OIDC_PROVIDER_DB_TABLE = `${REALM}-consulting-${AWS_REGION}-${NODE_ENV}-oidc-provider`,
   USE_DEV_INTERACTIONS = false,
-  AUTH_INTERACTIONS_URL = 'http://0.0.0.0:8002',
+  AUTH_INTERACTIONS_URL = 'http://localhost:8002/interactions',
 } = process.env;
 
 export default checkEnvironmentVariables<EnvironmentVariables>({
