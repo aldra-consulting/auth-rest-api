@@ -80,5 +80,18 @@ export default (provider: Provider) => {
     }
   });
 
+  router.get('/interaction/:uid/abort', async ({ req, res }) =>
+    provider.interactionFinished(
+      req,
+      res,
+      {
+        error: 'interaction_aborted',
+      },
+      {
+        mergeWithLastSubmission: false,
+      }
+    )
+  );
+
   return router;
 };
