@@ -2,7 +2,6 @@ import Provider from 'oidc-provider';
 
 import { ApplicationPhase } from '@project/enums';
 import env from '@project/env';
-import logger from '@project/utils/logging';
 
 import {
   compression,
@@ -29,14 +28,6 @@ export default async () =>
     provider.use(helmet);
     provider.use(referrer);
     provider.use(router(provider).routes());
-
-    provider.use(async (ctx, next) => {
-      logger.info('pre', { ctx });
-
-      await next();
-
-      logger.info('post', { ctx });
-    });
 
     provider.on(ApplicationPhase.SERVER_START, serverConfiguration);
     provider.on(ApplicationPhase.SERVER_START, queueListener);
