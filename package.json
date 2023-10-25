@@ -1,6 +1,6 @@
 {
   "name": "@aldra-consulting/auth-rest-api",
-  "version": "1.8.1",
+  "version": "1.9.0",
   "description": "An OpenID Connect authorization server.",
   "type": "module",
   "repository": {

@@ -1,3 +1,15 @@
+# [1.9.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.8.1...1.9.0) (2023-10-25)
+
+
+### Bug Fixes
+
+* change AUTH_INTERACTIONS_URL environment variable ([870b0eb](https://github.com/aldra-consulting/auth-rest-api/commit/870b0ebdac2d6d3f760bdfd8f13ca3875f65c642))
+
+
+### Features
+
+* add endpoint to for aborting an interaction ([172a290](https://github.com/aldra-consulting/auth-rest-api/commit/172a29021f3833d2f747d7f127103c3d5065a4b2))
+
 ## [1.8.1](https://github.com/aldra-consulting/auth-rest-api/compare/1.8.0...1.8.1) (2023-10-20)
 
 
