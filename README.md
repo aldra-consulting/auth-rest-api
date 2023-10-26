@@ -42,8 +42,8 @@ Auth REST API is an OpenID Connect authorization server.
   - `8001` (default)
 - `ISSUER` - OIDC issuer
   - `http://0.0.0.0:8001` (default in development mode)
-  - `https://id.{env}.aldra.no` (must be used in production-like environments)
-  - `https://id.aldra.no` (must be used in production)
+  - `https://www.id.{env}.aldra.no` (must be used in production-like environments)
+  - `https://www.id.aldra.no` (must be used in production)
 - `REALM` - realm name
   - `aldra` (default)
 - `AWS_REGION` - AWS region
@@ -55,7 +55,7 @@ Auth REST API is an OpenID Connect authorization server.
 - `OIDC_PROVIDER_DB_TABLE` - AWS DynamoDB table name to be used by the adapter
 - `USE_DEV_INTERACTIONS` - boolean flag to indicate whether to enable dev interactions
 - `AUTH_INTERACTIONS_URL` - auth interactions URL
-  - `http://localhost:8002` (default in development)
+  - `http://localhost:8002/interactions` (default in development)
   - `https://id.{env}.aldra.no/interactions` (must be used in production-like environments)
   - `https://id.aldra.no/interactions` (must be used in production)
 
