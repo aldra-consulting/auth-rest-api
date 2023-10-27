@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.9.0...1.10.0) (2023-10-27)
+
+
+### Features
+
+* add cookie domain name to use cookies across subdomains ([8385b8d](https://github.com/aldra-consulting/auth-rest-api/commit/8385b8dab19fb9c1c64fcaaad446aaf06b01667c))
+
 # [1.9.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.8.1...1.9.0) (2023-10-25)
 
 
