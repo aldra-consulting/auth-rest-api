@@ -15,6 +15,7 @@ const {
   AWS_SECRET_ARN_OIDC_COOKIE_KEYS = '',
   AWS_SECRET_ARN_OIDC_JWKS = '',
   OIDC_PROVIDER_DB_TABLE = `${REALM}-consulting-${AWS_REGION}-${NODE_ENV}-oidc-provider`,
+  COOKIE_DOMAIN_NAME = 'localhost',
   USE_DEV_INTERACTIONS = false,
   AUTH_INTERACTIONS_URL = 'http://localhost:8002/interactions',
 } = process.env;
@@ -31,6 +32,7 @@ export default checkEnvironmentVariables<EnvironmentVariables>({
   AWS_SECRET_ARN_OIDC_COOKIE_KEYS,
   AWS_SECRET_ARN_OIDC_JWKS,
   OIDC_PROVIDER_DB_TABLE,
+  COOKIE_DOMAIN_NAME,
   USE_DEV_INTERACTIONS: ['true', true].includes(USE_DEV_INTERACTIONS),
   AUTH_INTERACTIONS_URL,
 });

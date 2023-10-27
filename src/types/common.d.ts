@@ -25,6 +25,7 @@ export interface EnvironmentVariables {
   AWS_SECRET_ARN_OIDC_COOKIE_KEYS: string;
   AWS_SECRET_ARN_OIDC_JWKS: string;
   OIDC_PROVIDER_DB_TABLE: string;
+  COOKIE_DOMAIN_NAME: string;
   USE_DEV_INTERACTIONS: boolean;
   AUTH_INTERACTIONS_URL: string;
 }

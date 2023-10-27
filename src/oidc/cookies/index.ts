@@ -1,5 +1,6 @@
 import { type Configuration } from 'oidc-provider';
 
+import env from '@project/env';
 import { isDevelopmentEnvironment } from '@project/utils/common';
 import { getCookieKeys } from '@project/utils/crypto';
 
@@ -18,6 +19,7 @@ export default async () =>
       sameSite: 'none',
       signed: true,
       secure: !isDevelopmentEnvironment(),
+      domain: env.COOKIE_DOMAIN_NAME,
       path: '/',
     },
     long: {
@@ -26,6 +28,7 @@ export default async () =>
       sameSite: 'none',
       signed: true,
       secure: !isDevelopmentEnvironment(),
+      domain: env.COOKIE_DOMAIN_NAME,
       path: '/',
     },
   }) satisfies Configuration['cookies'];
