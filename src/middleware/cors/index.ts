@@ -7,8 +7,10 @@ import origins from '../../oidc/origins';
 const { NODE_ENV: environment } = env;
 
 export default cors({
-  origin: ({ headers: { origin } }) =>
-    origin && origins()[environment].includes(origin) ? origin : '',
+  origin: ({ headers: { origin } }) => {
+    console.log('::AZ::', { origin });
+    return origin && origins()[environment].includes(origin) ? origin : '';
+  },
   allowMethods: ['GET', 'POST'],
   credentials: true,
 });
