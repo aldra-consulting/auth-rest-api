@@ -1,3 +1,10 @@
+## [1.10.3](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.2...1.10.3) (2023-10-28)
+
+
+### Bug Fixes
+
+* change production origins ([b67f6b5](https://github.com/aldra-consulting/auth-rest-api/commit/b67f6b590476ddc0196c624bd9ce1d6b2b61dd57))
+
 ## [1.10.2](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.1...1.10.2) (2023-10-28)
 
 
