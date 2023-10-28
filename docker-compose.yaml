@@ -22,6 +22,7 @@ services:
       - COOKIE_DOMAIN_NAME=localhost
       - USE_DEV_INTERACTIONS=false
       - AUTH_INTERACTIONS_URL=http://0.0.0.0:8002/interactions
+      - NPM_CONFIG_UPDATE_NOTIFIER=false
     networks:
       aldra:
         aliases:

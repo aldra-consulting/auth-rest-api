@@ -14,8 +14,6 @@ COPY --chown=app:app node_modules ./node_modules
 COPY --chown=app:app lib ./lib
 COPY --chown=app:app entrypoint.sh ./
 
-RUN npm config set update-notifier false
-
 ENTRYPOINT [ "./entrypoint.sh" ]
 
 EXPOSE 8000

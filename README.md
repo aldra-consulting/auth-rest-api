@@ -24,7 +24,7 @@ Auth REST API is an OpenID Connect authorization server.
 - Build a Docker container using the following command:
   - `docker build -f docker/app.Dockerfile -t aldra/auth-rest-api-app .`
 - Run the container using the following comand:
-  - `docker run -d -p 8001:8000 -e NODE_ENV -e HOST -e PORT -e ISSUER -e REALM -e AWS_REGION -e AWS_COGNITO_USER_POOL_ID -e AWS_COGNITO_USER_POOL_CLIENT_ID -e AWS_SECRET_ARN_OIDC_COOKIE_KEYS -e AWS_SECRET_ARN_OIDC_JWKS -e OIDC_PROVIDER_DB_TABLE -e COOKIE_DOMAIN_NAME -e USE_DEV_INTERACTIONS -e AUTH_INTERACTIONS_URL aldra/auth-rest-api-app`
+  - `docker run -d -p 8001:8000 -e NODE_ENV -e HOST -e PORT -e ISSUER -e REALM -e AWS_REGION -e AWS_COGNITO_USER_POOL_ID -e AWS_COGNITO_USER_POOL_CLIENT_ID -e AWS_SECRET_ARN_OIDC_COOKIE_KEYS -e AWS_SECRET_ARN_OIDC_JWKS -e OIDC_PROVIDER_DB_TABLE -e COOKIE_DOMAIN_NAME -e USE_DEV_INTERACTIONS -e AUTH_INTERACTIONS_URL -e NPM_CONFIG_UPDATE_NOTIFIER=false aldra/auth-rest-api-app`
 
 #### Running application using Docker Compose
 
@@ -62,6 +62,7 @@ Auth REST API is an OpenID Connect authorization server.
   - `http://localhost:8002/interactions` (default in development)
   - `https://id.{env}.aldra.no/interactions` (must be used in production-like environments)
   - `https://id.aldra.no/interactions` (must be used in production)
+- `NPM_CONFIG_UPDATE_NOTIFIER` - should be set to `false` to prevent application from crashing in a read-only environment
 
 ## External Services
 
