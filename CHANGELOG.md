@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.0...1.10.1) (2023-10-28)
+
+
+### Bug Fixes
+
+* disable NPM update notifier to prevent container from crashing ([07c5128](https://github.com/aldra-consulting/auth-rest-api/commit/07c5128543bd288b8413bc79caa42b42b76452e4))
+
 # [1.10.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.9.0...1.10.0) (2023-10-27)
 
 
