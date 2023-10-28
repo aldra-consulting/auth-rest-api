@@ -1,3 +1,10 @@
+## [1.10.4](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.3...1.10.4) (2023-10-28)
+
+
+### Bug Fixes
+
+* add logger for origin header ([219d111](https://github.com/aldra-consulting/auth-rest-api/commit/219d111af9c5e1bd6e4b95431365c0e81288b944))
+
 ## [1.10.3](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.2...1.10.3) (2023-10-28)
 
 
