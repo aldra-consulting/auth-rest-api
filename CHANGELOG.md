@@ -1,3 +1,11 @@
+## [1.10.5](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.4...1.10.5) (2023-10-28)
+
+
+### Bug Fixes
+
+* disable security ([82e83e6](https://github.com/aldra-consulting/auth-rest-api/commit/82e83e622b8085bc6ef396fad5ff8603d579b68f))
+* roll back origin header logging ([b7a019f](https://github.com/aldra-consulting/auth-rest-api/commit/b7a019fd35422aa887aa273fe177ce1c76fb08be))
+
 ## [1.10.4](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.3...1.10.4) (2023-10-28)
 
 
