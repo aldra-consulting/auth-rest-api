@@ -1,3 +1,10 @@
+## [1.10.2](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.1...1.10.2) (2023-10-28)
+
+
+### Bug Fixes
+
+* disable NPM update notifier using an environment variable ([e98b211](https://github.com/aldra-consulting/auth-rest-api/commit/e98b211dce9dbeb810cba4d6122a4136a55fc694))
+
 ## [1.10.1](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.0...1.10.1) (2023-10-28)
 
 
