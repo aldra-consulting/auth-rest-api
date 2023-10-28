@@ -8,5 +8,5 @@ export default () =>
       'http://0.0.0.0:8002',
       'http://0.0.0.0:8003',
     ],
-    production: ['https://aldra.no', 'https://id.aldra.no'],
+    production: ['https://www.aldra.no', 'https://www.id.aldra.no'],
   }) satisfies Record<EnvironmentVariables['NODE_ENV'], string[]>;
