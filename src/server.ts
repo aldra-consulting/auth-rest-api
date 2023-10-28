@@ -5,10 +5,10 @@ import env from '@project/env';
 
 import {
   compression,
-  cors,
-  crossdomain,
-  helmet,
-  referrer,
+  // cors,
+  // crossdomain,
+  // helmet,
+  // referrer,
   router,
 } from './middleware';
 import configuration from './oidc';
@@ -23,10 +23,10 @@ export default async () =>
     provider.proxy = env.NODE_ENV === 'production';
 
     provider.use(compression);
-    provider.use(cors);
-    provider.use(crossdomain);
-    provider.use(helmet);
-    provider.use(referrer);
+    // provider.use(cors);
+    // provider.use(crossdomain);
+    // provider.use(helmet);
+    // provider.use(referrer);
     provider.use(router(provider).routes());
 
     provider.on(ApplicationPhase.SERVER_START, serverConfiguration);
