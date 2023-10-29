@@ -1,3 +1,10 @@
+## [1.10.7](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.6...1.10.7) (2023-10-29)
+
+
+### Bug Fixes
+
+* add logging ([0b90f1f](https://github.com/aldra-consulting/auth-rest-api/commit/0b90f1f29c4f9fd98ae4b7653458afef933d8c4d))
+
 ## [1.10.6](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.5...1.10.6) (2023-10-29)
 
 
