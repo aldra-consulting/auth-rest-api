@@ -1,3 +1,10 @@
+## [1.10.9](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.8...1.10.9) (2023-10-29)
+
+
+### Bug Fixes
+
+* use a more robust handler for aborting intraction ([d806b45](https://github.com/aldra-consulting/auth-rest-api/commit/d806b45b7809ad243d19277a4f0b82fb20a0698e))
+
 ## [1.10.8](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.7...1.10.8) (2023-10-29)
 
 
