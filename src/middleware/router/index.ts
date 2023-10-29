@@ -80,18 +80,27 @@ export default (provider: Provider) => {
     }
   });
 
-  router.get('/interaction/:uid/abort', async ({ req, res }) =>
-    provider.interactionFinished(
-      req,
-      res,
-      {
-        error: 'interaction_aborted',
-      },
-      {
-        mergeWithLastSubmission: false,
-      }
-    )
-  );
+  router.get('/interaction/:uid/abort', async (ctx) => {
+    try {
+      return await provider.interactionFinished(
+        ctx.req,
+        ctx.res,
+        {
+          error: 'interaction_aborted',
+        },
+        {
+          mergeWithLastSubmission: false,
+        }
+      );
+    } catch (error) {
+      logger.error('Error while aborting interaction', {
+        tags: [...interactionRouteTags, 'abort', 'error'],
+        error,
+      });
+    }
+
+    return ctx.redirect(`${host}/error`);
+  });
 
   return router;
 };
