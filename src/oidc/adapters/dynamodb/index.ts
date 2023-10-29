@@ -122,11 +122,14 @@ export default class DynamoDBAdapter {
   #set = async <T>(key: string, value: T, ttl?: number): Promise<void> => {
     await this.#client.putItem({
       TableName,
-      Item: marshall({
-        id: key,
-        ...value,
-        expiresAt: ttl ? Math.floor(Date.now() / 1000) + ttl : undefined,
-      }),
+      Item: marshall(
+        {
+          id: key,
+          ...value,
+          expiresAt: ttl ? Math.floor(Date.now() / 1000) + ttl : undefined,
+        },
+        { removeUndefinedValues: true }
+      ),
     });
   };
 
