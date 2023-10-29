@@ -64,6 +64,8 @@ export default class CognitoService {
     password: string
   ): Promise<SignInResponse> => {
     try {
+      console.log('::AZ::', { username, password });
+
       const { AuthenticationResult } = await this.#client.adminInitiateAuth({
         AuthFlow: 'ADMIN_NO_SRP_AUTH',
         UserPoolId: this.#userPoolId,
