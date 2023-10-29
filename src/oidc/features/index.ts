@@ -12,7 +12,10 @@ export default () =>
     rpInitiatedLogout: {
       enabled: true,
       logoutSource(ctx, form) {
-        ctx.set('Content-Security-Policy', "script-src 'self' 'unsafe-inline'");
+        ctx.set('Content-Security-Policy', [
+          "script-src 'self' 'unsafe-inline'",
+          "form-action 'self'",
+        ]);
 
         ctx.body = `
         <!DOCTYPE html>
