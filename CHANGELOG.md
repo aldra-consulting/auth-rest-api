@@ -1,3 +1,10 @@
+## [1.10.10](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.9...1.10.10) (2023-10-29)
+
+
+### Bug Fixes
+
+* improvements to post logout page ([685a15f](https://github.com/aldra-consulting/auth-rest-api/commit/685a15f5f4564b260d51e5d0176f3a3001ad54f6))
+
 ## [1.10.9](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.8...1.10.9) (2023-10-29)
 
 
