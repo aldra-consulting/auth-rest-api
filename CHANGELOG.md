@@ -1,3 +1,10 @@
+## [1.10.11](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.10...1.10.11) (2023-10-29)
+
+
+### Bug Fixes
+
+* change CSP policy ([bc827c6](https://github.com/aldra-consulting/auth-rest-api/commit/bc827c67de4521988b32b184b32232dabc265f6e))
+
 ## [1.10.10](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.9...1.10.10) (2023-10-29)
 
 
