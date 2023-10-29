@@ -1,3 +1,11 @@
+## [1.10.8](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.7...1.10.8) (2023-10-29)
+
+
+### Bug Fixes
+
+* enable security ([9023c15](https://github.com/aldra-consulting/auth-rest-api/commit/9023c156136ba9a27c3cf26ed4686a7d088d79f8))
+* remove logging ([d6a3492](https://github.com/aldra-consulting/auth-rest-api/commit/d6a349205a73cf4b8367e734574adf0e4f62f5c3))
+
 ## [1.10.7](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.6...1.10.7) (2023-10-29)
 
 
