@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/aldra-consulting/auth-rest-api/compare/1.11.0...1.11.1) (2023-10-30)
+
+
+### Bug Fixes
+
+* remove form-action from CSP policy ([3c86fd2](https://github.com/aldra-consulting/auth-rest-api/commit/3c86fd220e33b3766e8c7146fc82a257d94adc0a))
+
 # [1.11.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.11...1.11.0) (2023-10-30)
 
 
