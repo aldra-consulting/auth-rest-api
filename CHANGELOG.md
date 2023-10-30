@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.11...1.11.0) (2023-10-30)
+
+
+### Features
+
+* improve CSP configuration ([ce74a0f](https://github.com/aldra-consulting/auth-rest-api/commit/ce74a0f7ce500ba83c6e8326a69eec2e57cd502b))
+
 ## [1.10.11](https://github.com/aldra-consulting/auth-rest-api/compare/1.10.10...1.10.11) (2023-10-29)
 
 
