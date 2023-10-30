@@ -7,9 +7,11 @@ import {
   compression,
   cors,
   crossdomain,
+  csp,
   helmet,
   referrer,
   router,
+  state,
 } from './middleware';
 import configuration from './oidc';
 import { serverConfiguration, queueListener } from './plugins';
@@ -22,10 +24,12 @@ export default async () =>
 
     provider.proxy = env.NODE_ENV === 'production';
 
+    provider.use(state);
     provider.use(compression);
     provider.use(cors);
-    provider.use(crossdomain);
     provider.use(helmet);
+    provider.use(crossdomain);
+    provider.use(csp);
     provider.use(referrer);
     provider.use(router(provider).routes());
 

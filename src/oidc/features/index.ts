@@ -12,11 +12,6 @@ export default () =>
     rpInitiatedLogout: {
       enabled: true,
       logoutSource(ctx, form) {
-        ctx.set('Content-Security-Policy', [
-          "script-src 'self' 'unsafe-inline'",
-          "form-action 'self'",
-        ]);
-
         ctx.body = `
         <!DOCTYPE html>
         <html>
@@ -31,7 +26,7 @@ export default () =>
           <body>
             ${form}
             <input type="hidden" name="logout" value="yes" form="op.logoutForm" />
-            <script>
+            <script nonce="${ctx.state.cspNonce}">
               document.forms['op.logoutForm'].submit()
             </script>
           </body>

@@ -86,6 +86,19 @@
     },
     {
       "files": [
+        "src/types/**"
+      ],
+      "rules": {
+        "@typescript-eslint/consistent-type-imports": [
+          "error",
+          {
+            "disallowTypeAnnotations": false
+          }
+        ]
+      }
+    },
+    {
+      "files": [
         "src/**/*.test.*",
         "test/**/*",
         "jest.config.ts"
