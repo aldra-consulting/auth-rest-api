@@ -6,7 +6,6 @@ export default helmet.contentSecurityPolicy({
     defaultSrc: ["'self'"],
     baseUri: ["'self'"],
     fontSrc: ["'self'", 'https:', 'data:'],
-    formAction: [],
     frameAncestors: ["'self'"],
     imgSrc: ["'self'", 'data:'],
     objectSrc: ["'none'"],
