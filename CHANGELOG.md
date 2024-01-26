@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.11.1...1.12.0) (2024-01-26)
+
+
+### Features
+
+* add URLs for platform-web ([50d1b6f](https://github.com/aldra-consulting/auth-rest-api/commit/50d1b6f4f79596694185bcda21fc940a0393b7f2))
+
 ## [1.11.1](https://github.com/aldra-consulting/auth-rest-api/compare/1.11.0...1.11.1) (2023-10-30)
 
 
