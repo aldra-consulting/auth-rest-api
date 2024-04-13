@@ -26,7 +26,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           registry-url: https://npm.pkg.github.com
           node-version: 18
@@ -35,7 +35,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.ALDRA_GITHUB_BOT_TOKEN }}
 
       - name: Install dependencies
-        run: npm ci --quiet --ignore-scripts
+        run: npm ci --quiet
 
       - name: Import GPG key for Aldra GitHub Bot
         id: gpg
