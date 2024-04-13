@@ -28,6 +28,7 @@ export default () =>
       'updated_at',
       'website',
       'zoneinfo',
+      'sanity_person_id',
     ],
     session_state: null,
     sid: null,

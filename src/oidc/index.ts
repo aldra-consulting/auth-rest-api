@@ -114,6 +114,7 @@ export default async (): Promise<Configuration> => ({
             locale: 'en',
             email_verified: true,
             phone_number_verified: false,
+            sanity_person_id: 'sanity_person_id',
           };
         },
       };
@@ -137,6 +138,7 @@ export default async (): Promise<Configuration> => ({
             locale,
             email_verified,
             phone_number_verified,
+            sanity_person_id,
           } = {},
         } = user;
 
@@ -161,6 +163,7 @@ export default async (): Promise<Configuration> => ({
               locale,
               email_verified,
               phone_number_verified,
+              sanity_person_id,
             };
           },
         };
