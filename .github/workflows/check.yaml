@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           registry-url: https://npm.pkg.github.com
-          node-version: 18
+          node-version: 20
           cache: npm
         env:
           NODE_AUTH_TOKEN: ${{ secrets.ALDRA_GITHUB_BOT_TOKEN }}
