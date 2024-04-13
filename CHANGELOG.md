@@ -1,3 +1,15 @@
+# [1.13.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.12.0...1.13.0) (2024-04-13)
+
+
+### Bug Fixes
+
+* add missing 'ts-node' dependency ([50593b3](https://github.com/aldra-consulting/auth-rest-api/commit/50593b340354432f7c7bdd0bb0154f279bb79546))
+
+
+### Features
+
+* add 'sanity_person_id' token claim ([2a2cc90](https://github.com/aldra-consulting/auth-rest-api/commit/2a2cc90b76a58652aa16975ef7176c240bc108fb))
+
 # [1.12.0](https://github.com/aldra-consulting/auth-rest-api/compare/1.11.1...1.12.0) (2024-01-26)
 
 
